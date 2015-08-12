@@ -1,0 +1,17 @@
+@(list: List[User])
+
+@main("List of Users") {
+
+
+    <a href="@routes.Application.index">Index</a>
+    <a href="@routes.Application.create">Insert</a>
+
+    <hr />
+
+    @for(l <- list){
+        <li>@l.id -- @l.name</li>
+        <li><a href="@routes.Application.findById(l.id.get.toString)">Show</a></li>
+    }
+
+
+}
