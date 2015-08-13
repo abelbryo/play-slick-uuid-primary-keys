@@ -3,7 +3,7 @@
 
 # --- !Ups
 
-create table "users" ("name" VARCHAR NOT NULL,"id" UUID NOT NULL PRIMARY KEY);
+create table "users" ("name" VARCHAR(254) NOT NULL,"id" UUID NOT NULL PRIMARY KEY);
 
 # --- !Downs
 
