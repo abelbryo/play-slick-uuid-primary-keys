@@ -31,7 +31,6 @@ object UserQueries {
   }
 
   def getById(id: UUID): Option[User] = DB.withSession {
-    import scala.util.{Try, Success, Failure}
     implicit session: Session =>
         users.filter(_.id === id).firstOption
   }
