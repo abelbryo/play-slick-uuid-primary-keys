@@ -3,9 +3,9 @@
 
 # --- !Ups
 
-create table "users" ("name" VARCHAR(254) NOT NULL,"id" UUID NOT NULL PRIMARY KEY);
+create table "shard_1"."users" ("name" VARCHAR(254) NOT NULL,"id" UUID NOT NULL PRIMARY KEY);
 
 # --- !Downs
 
-drop table "users";
+drop table "shard_1"."users";
 

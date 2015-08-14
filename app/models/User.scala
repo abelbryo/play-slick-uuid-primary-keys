@@ -10,7 +10,7 @@ case class User(name: String, id: Option[UUID]=Some(UUID.randomUUID))
 
 import play.api.db.slick.Config.driver.simple._
 
-class Users(tag: Tag) extends Table[User](tag, "users") {
+class Users(tag: Tag) extends Table[User](tag, Some("shard_1"), "users") {
   def name = column[String]("name", O.NotNull)
   def id = column[UUID]("id", O.PrimaryKey, O.DBType("UUID"))
 

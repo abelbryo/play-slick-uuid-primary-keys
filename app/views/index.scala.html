@@ -1,4 +1,4 @@
-@(list: List[User])
+@(list: List[User], el: List[Employee])
 
 @main("List of Users") {
 
@@ -9,10 +9,21 @@
 
     <hr />
 
+    <h2>Users</h2>
+
     @for(l <- list){
         <li>@l.id -- @l.name</li>
         <li><a href="@routes.Application.findById(l.id.get.toString)"> Show </a></li>
     }
+
+    <hr />
+
+    <h2>Employees</h2>
+
+    @for(l <- el){
+        <li>@l.id -- @l.name</li>
+    }
+
 
 
 }

@@ -11,11 +11,18 @@ class Application extends Controller {
 
   def index = Action {
     val list: List[User] = UserQueries.list
-    Ok(views.html.index(list))
+    val employeeList: List[Employee] = EmployeeManager.selectAll
+
+    Ok(views.html.index(list, employeeList))
   }
 
   def create = Action { implicit request =>
     val result: Int  = UserQueries.create(User("John Doe" ))
+    val employee = Employee("Johnny B Good", None)
+
+    EmployeeManager.insert(employee)
+
+
     Ok("status " + result)
   }
 
