@@ -1,11 +1,11 @@
-## Using UUIDs as Primary Key with play-slick
+## Custom Id generator for primary key and UUIDs as Primary key.
 
-Is that even a good idea? Anyway,
+This project shows a way to use UUID as primary key for postgres and custom id generator function using plain sql in slick
 
-This project uses Play 2.3.9 and play-slick 0.8.1
+It uses Play 2.3.9 and play-slick 0.8.1
+
 Enjoy :)
 
-**Note**: For postgres don't forget to do `CREATE EXTENSION "uuid-ossp"`.
 
 
 
