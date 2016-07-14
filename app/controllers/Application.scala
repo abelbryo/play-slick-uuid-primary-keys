@@ -17,8 +17,8 @@ class Application extends Controller {
   }
 
   def create = Action { implicit request =>
-    val result: Int  = UserQueries.create(User("John Doe" ))
-    val employee = Employee("Johnny B Good", None)
+    val result: Int  = UserQueries.create(User(name = "John Doe" ))
+    val employee = Employee(None, "Johnny B Good")
 
     EmployeeManager.insert(employee)
 

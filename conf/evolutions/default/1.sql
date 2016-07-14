@@ -3,7 +3,7 @@
 
 # --- !Ups
 
-create table "shard_1"."users" ("name" VARCHAR(254) NOT NULL,"id" UUID NOT NULL PRIMARY KEY);
+create table "shard_1"."users" ("id" UUID NOT NULL PRIMARY KEY,"name" VARCHAR(254) NOT NULL);
 
 # --- !Downs
 
