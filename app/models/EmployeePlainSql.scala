@@ -66,7 +66,7 @@ object EmployeeManager {
     selectAllQuery.list
   }
 
-  def insert(e: Employee) = DB.withSession { implicit session: Session =>
+  def insert(e: Employee): Unit = DB.withSession { implicit session: Session =>
     (Q.u + "INSERT INTO shard_1.employees (name) VALUES (" +? e.name + ")").execute
   }
 

@@ -10,18 +10,21 @@ class Application extends Controller {
   import models._
 
   def index = Action {
-    val list: List[User] = UserQueries.list
-    val employeeList: List[Employee] = EmployeeManager.selectAll
+    val users: List[User] = UserQueries.list
+    val employees: List[Employee] = EmployeeManager.selectAll
+    val students: List[Student] = StudentQueries.list
 
-    Ok(views.html.index(list, employeeList))
+    Ok(views.html.index(users, employees, students))
   }
 
   def create = Action { implicit request =>
-    val result: Int  = UserQueries.create(User(name = "John Doe" ))
+    val user = User(name = "John Doe" )
     val employee = Employee(None, "Johnny B Good")
+    val student = Student(None, "Margaret Jackson")
 
-    EmployeeManager.insert(employee)
-
+    val result: Int  = UserQueries.create(user )
+    val result2: Unit = EmployeeManager.insert(employee)
+    val result3: Int = StudentQueries.create(student)
 
     Ok("status " + result)
   }

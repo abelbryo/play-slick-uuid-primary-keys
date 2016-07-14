@@ -18,11 +18,6 @@ object Global extends GlobalSettings {
 
   object Init {
 
-    // shard_1 is the schema in postgres. no big deal
-    //
-
-    // val User(name: String, id: Option[UUID]=Some(UUID.randomUUID))
-
     def createTables = DB.withSession { implicit session: DBSession =>
 
       /**
@@ -42,6 +37,10 @@ object Global extends GlobalSettings {
 
       if (MTable.getTables("users").list(session).isEmpty
         && MTable.getTables("shard_1.users").list(session).isEmpty) UserQueries.createTable
+
+
+      if (MTable.getTables("students").list(session).isEmpty
+        && MTable.getTables("shard_1.students").list(session).isEmpty) StudentQueries.createTable
     }
   }
 }
